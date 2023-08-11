@@ -428,3 +428,11 @@ unis.forEach(uni => {
         four.style.background = "none";
     });
 });
+
+VanillaTilt.init(document.querySelectorAll(".image-card"), {
+    max: 25,
+    speed: 400,
+    easing: "cubic-bezier(.05,.80,.60,.99)",
+    perspective: 500,
+    transition: true
+});
