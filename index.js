@@ -290,69 +290,18 @@ $('.overlay-navigation ul li a').click(function() {
     }
 })
 
-$('.icon1').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon1').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content1').toggleClass('activecontent');
-    $('.content1').style.opacity = '1';
-})
+for (let i = 1; i <= 9; i++) {
+    $(`.icon${i}`).click(function() {
+        $('.activeicon').toggleClass('activeicon');
+        $(`.icon${i}`).toggleClass('activeicon');
+        $('.activecontent').toggleClass('activecontent');
+        $(`.content${i}`).toggleClass('activecontent');
 
-$('.icon2').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon2').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content2').toggleClass('activecontent');
-})
-
-$('.icon3').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon3').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content3').toggleClass('activecontent');
-})
-
-$('.icon4').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon4').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content4').toggleClass('activecontent');
-})
-
-$('.icon5').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon5').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content5').toggleClass('activecontent');
-})
-
-$('.icon6').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon6').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content6').toggleClass('activecontent');
-})
-
-$('.icon7').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon7').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content7').toggleClass('activecontent');
-})
-
-$('.icon8').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon8').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content8').toggleClass('activecontent');
-})
-
-$('.icon9').click(function() {
-    $('.activeicon').toggleClass('activeicon');
-    $('.icon9').toggleClass('activeicon');
-    $('.activecontent').toggleClass('activecontent');
-    $('.content9').toggleClass('activecontent');
-})
+        if (i === 1) {
+            $('.content1').css('opacity', '1');
+        }
+    });
+}
 
 function hideList(item) {
     if (item.hasClass('inactivelist')) {} else {
@@ -360,60 +309,16 @@ function hideList(item) {
     }
 }
 
-$('.listitem1').click(function() {
-    if ($('.item1').hasClass('inactivelist')) {
-        $('.listcontainer').each(function() {
+for (let i = 1; i <= 5; i++) {
+    $(`.listitem${i}`).click(function() {
+        const $item = $(`.item${i}`);
+        $('.listcontainer').not($item).each(function() {
             hideList($(this));
         });
-        $('.item1').toggleClass('inactivelist');
-    } else {
-        $('.item1').toggleClass('inactivelist');
-    }
-});
+        $item.toggleClass('inactivelist');
+    });
+}
 
-$('.listitem2').click(function() {
-    if ($('.item2').hasClass('inactivelist')) {
-        $('.listcontainer').each(function() {
-            hideList($(this));
-        });
-        $('.item2').toggleClass('inactivelist');
-    } else {
-        $('.item2').toggleClass('inactivelist');
-    }
-});
-
-$('.listitem3').click(function() {
-    if ($('.item3').hasClass('inactivelist')) {
-        $('.listcontainer').each(function() {
-            hideList($(this));
-        });
-        $('.item3').toggleClass('inactivelist');
-    } else {
-        $('.item3').toggleClass('inactivelist');
-    }
-});
-
-$('.listitem4').click(function() {
-    if ($('.item4').hasClass('inactivelist')) {
-        $('.listcontainer').each(function() {
-            hideList($(this));
-        });
-        $('.item4').toggleClass('inactivelist');
-    } else {
-        $('.item4').toggleClass('inactivelist');
-    }
-});
-
-$('.listitem5').click(function() {
-    if ($('.item5').hasClass('inactivelist')) {
-        $('.listcontainer').each(function() {
-            hideList($(this));
-        });
-        $('.item5').toggleClass('inactivelist');
-    } else {
-        $('.item5').toggleClass('inactivelist');
-    }
-});
 
 const unis = document.querySelectorAll("[id^='uni-']");
 const four = document.querySelector(".four");
