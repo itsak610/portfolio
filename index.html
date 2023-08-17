@@ -2,8 +2,16 @@
 <html>
 
 <head>
-    <title>My Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Namdeo</title>
+    <meta name="description" content="Description of your website">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="icon" type="image/png" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -17,11 +25,11 @@
         <div class="overlay-navigation">
             <nav role="navigation">
                 <ul>
-                    <li><a href="javascript:document.getElementsByClassName('page')[0].scrollIntoView()">Home</a></li>
-                    <li><a href="javascript:document.getElementsByClassName('page')[1].scrollIntoView()">About</a></li>
-                    <li><a href="javascript:document.getElementsByClassName('page')[2].scrollIntoView()">Skills</a></li>
-                    <li><a href="javascript:document.getElementsByClassName('page')[3].scrollIntoView()">Projects</a></li>
-                    <li><a href="javascript:document.getElementsByClassName('page')[4].scrollIntoView()">Contact</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,15 +38,21 @@
             <span class="bar-middle"></span>
             <span class="bar-bottom"></span>
         </div>
-        <section class="page one">
+        <section class="page one" id="home">
             <div class="headingdiv">
                 <h1 class="heading1">Unleashing digital wonders is my passion!</h1>
                 <h1 class="heading2">I am Akshat Namdeo, a Full-Stack Web Developer, and this is where my creations come to life.</h1>
                 <h1 class="heading3">Welcome to my portfolio!</h1>
-                <h1 class="heading4">Open the nav menu to view my Skills and Projects.</h1>
+                <h1 class="heading4">Quick Links:
+                    <span class="link-separator">|</span>
+                    <a class="quick-link" href="javascript:document.getElementsByClassName('page')[2].scrollIntoView()">Skills (Resume)</a>
+                    <span class="link-separator">|</span>
+                    <a class="quick-link" href="javascript:document.getElementsByClassName('page')[3].scrollIntoView()">Projects</a>
+                    <span class="link-separator">|</span>
+                </h1>
             </div>
         </section>
-        <section class="page two">
+        <section class="page two" id="about">
             <div class="aboutme-outer">
                 <div class="aboutme-inner">
                     <div class="inner1">
@@ -61,7 +75,7 @@
                 </div>
             </div>
         </section>
-        <section class="page three">
+        <section class="page three" id="skills">
             <div class="iconbox">
                 <div class="icon icon1 activeicon">
                     <img src="user-solid.svg" alt="User Icon">
@@ -180,19 +194,28 @@
                             </div>
                             <div class="listcontainer item3 inactivelist">
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>HTML5</p>
+                                    <p>CSS</p>
+                                    <p>JavaScript</p>
+                                    <p>NodeJS</p>
                                 </div>
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>ExpressJS</p>
+                                    <p>ReactJS</p>
+                                    <p>NextJS</p>
+                                    <p>TypeScript</p>
                                 </div>
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>ThreeJS</p>
+                                    <p>PUG</p>
+                                    <p>SCSS</p>
+                                    <p>MySQL</p>
+                                </div>
+                                <div class="listcolumn">
+                                    <p>MongoDB</p>
+                                    <p>VueJS</p>
+                                    <p>Flask</p>
+                                    <p>Django</p>
                                 </div>
                             </div>
                         </li>
@@ -203,19 +226,19 @@
                             </div>
                             <div class="listcontainer item4 inactivelist">
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>Flask</p>
+                                    <p>Django</p>
+                                    <p>Tkinter</p>
                                 </div>
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>Pandas</p>
+                                    <p>NumPy</p>
+                                    <p>Matplotlib</p>
                                 </div>
                                 <div class="listcolumn">
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
-                                    <p>&#x2022; listitem</p>
+                                    <p>OpenAI</p>
+                                    <p>Speech Recognition</p>
+                                    <p>CSV</p>
                                 </div>
                             </div>
                         </li>
@@ -309,11 +332,14 @@
                     <p></p>
                 </div>
                 <div class="content content9">
-                    <p></p>
+                    <a href="link-to-your-resume.pdf" download class="download-button">
+                        Download Resume
+                        <span class="button-icon">&darr;</span>
+                    </a>
                 </div>
             </div>
         </section>
-        <section class="page four">
+        <section class="page four" id="projects">
             <div class="Uni-Blocks">
                 <div class="Uni-block" id="uni-1" data-image="decypher-blur.png">
                     <div class="uni-main">
@@ -345,39 +371,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="Uni-block" id="uni-3" data-image="tethics-blur.png">
-                    <div class="uni-main">
-                        <div class="uni-card uni-card1">
-                            <div class="uni-content">
-                                <img src="tethics.png">
+                <div class="Uni-Blocks">
+                    <div class="Uni-block" id="uni-3" data-image="tethics-blur.png">
+                        <div class="uni-main">
+                            <div class="uni-card uni-card1">
+                                <div class="uni-content">
+                                    <img src="tethics.png">
+                                </div>
+                            </div>
+                            <div class="uni-card uni-card2">
+                                <div class="uni-content">
+                                    <p><b>TEA</b> - A model school website created as an entry for a web dev competition called Tethics.</p>
+                                    <a href="https://tethics.herokuapp.com" target="_blank">View</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="uni-card uni-card2">
-                            <div class="uni-content">
-                                <p><b>TEA</b> - A model school website created as an entry for a web dev competition called Tethics.</p>
-                                <a href="https://tethics.herokuapp.com" target="_blank">View</a>
+                    </div>
+                    <div class="Uni-block" id="uni-4" data-image="minerva-blur.png">
+                        <div class="uni-main">
+                            <div class="uni-card uni-card1">
+                                <div class="uni-content">
+                                    <img src="minerva.png">
+                                </div>
+                            </div>
+                            <div class="uni-card uni-card2">
+                                <div class="uni-content">
+                                    <p><b>MinervaMUN</b> - A registration portal created an organization called Minerva Model United Nations.</p>
+                                    <a href="https://minerva-mun-portfolio-6b770e16a3a4.herokuapp.com" target="_blank">View</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="Uni-block" id="uni-4" data-image="minerva-blur.png">
-                    <div class="uni-main">
-                        <div class="uni-card uni-card1">
-                            <div class="uni-content">
-                                <img src="minerva.png">
-                            </div>
-                        </div>
-                        <div class="uni-card uni-card2">
-                            <div class="uni-content">
-                                <p><b>MinervaMUN</b> - A registration portal created an organization called Minerva Model United Nations.</p>
-                                <a href="https://minerva-mun-portfolio-6b770e16a3a4.herokuapp.com" target="_blank">View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
-        <section class="page five">
+        <section class="page five" id="contact">
             <h1>Five</h1>
         </section>
     </div>

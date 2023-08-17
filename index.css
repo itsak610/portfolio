@@ -410,7 +410,7 @@ nav li:nth-of-type(5) {
     opacity: 0;
     animation: revealWithBlur 2s ease-in-out;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
     position: fixed;
     right: 5rem;
     top: 3.2rem;
@@ -664,6 +664,43 @@ h1.heading2 {
 h1.heading4 {
     font-size: 25px;
     padding-top: 45px;
+    letter-spacing: 0.5px;
+}
+
+.quick-link {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: 0.5s;
+}
+
+.link-separator {
+    margin: 10px;
+    /* Adjust the spacing as needed */
+    color: #fff;
+}
+
+.quick-link::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    bottom: -2px;
+    height: 2px;
+    background: #CCCCCC;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.quick-link:hover {
+    color: #95a5a6;
+}
+
+.quick-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 
@@ -762,7 +799,6 @@ About Me
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-evenly;
     height: 80%;
     color: #fff;
     font-family: 'Work sans', sans-serif;
@@ -1069,6 +1105,10 @@ ol.rounded {
     justify-content: space-between;
 }
 
+.content3 .rounded-list2 p {
+    text-align: center;
+}
+
 .content4 ol.rounded {
     width: 100%;
 }
@@ -1152,22 +1192,55 @@ ol.rounded-list3 {
     display: none;
 }
 
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #dc5656;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-button:hover .button-icon {
+    transform: translateY(100%);
+}
+
+.button-icon {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
 
 /* ====================================
 Projects 
 ==================================== */
 
-.Uni-Blocks {
-    display: grid;
-    grid-template-columns: repeat(4, 300px);
-    grid-gap: 40px;
+.four {
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Neucha', cursive;
-    font-size: 18px;
-    height: max-content;
-    margin-left: 50px;
-    padding-top: 20px;
+    transition: background 1s ease;
+}
+
+.Uni-Blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+@media (max-width: 650px) {
+    .Uni-block {
+        width: 100%;
+    }
 }
 
 .Uni-block .uni-main {
@@ -1244,11 +1317,6 @@ Projects
 }
 
 @media (max-width: 1300px) {
-    .Uni-Blocks {
-        grid-template-columns: repeat(2, 350px);
-        height: max-content;
-        padding-top: 50px;
-    }
     .Uni-block .uni-main .uni-card {
         width: 300px;
         height: 200px;
@@ -1269,11 +1337,6 @@ Projects
 }
 
 @media (max-width: 800px) {
-    .Uni-Blocks {
-        grid-template-columns: repeat(2, 300px);
-        height: max-content;
-        padding-top: 150px;
-    }
     .Uni-block .uni-main .uni-card {
         width: 252px;
         height: 168px;

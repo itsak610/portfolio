@@ -303,21 +303,31 @@ for (let i = 1; i <= 9; i++) {
     });
 }
 
-function hideList(item) {
-    if (item.hasClass('inactivelist')) {} else {
-        item.toggleClass('inactivelist')
-    }
+function hideOtherLists(activeItem) {
+    $('.listcontainer').not(activeItem).each(function() {
+        $(this).closest('li').removeClass('active');
+        $(this).closest('li').find('.listcontainer').addClass('inactivelist');
+    });
 }
 
 for (let i = 1; i <= 5; i++) {
     $(`.listitem${i}`).click(function() {
         const $item = $(`.item${i}`);
-        $('.listcontainer').not($item).each(function() {
-            hideList($(this));
-        });
-        $item.toggleClass('inactivelist');
+
+        if ($item.hasClass('inactivelist')) {
+            hideOtherLists($item);
+            $item.closest('li').addClass('active');
+            $item.removeClass('inactivelist');
+        } else {
+            $item.closest('li').removeClass('active');
+            $item.addClass('inactivelist');
+        }
     });
 }
+
+
+
+
 
 
 const unis = document.querySelectorAll("[id^='uni-']");
@@ -340,4 +350,46 @@ VanillaTilt.init(document.querySelectorAll(".image-card"), {
     easing: "cubic-bezier(.05,.80,.60,.99)",
     perspective: 500,
     transition: true
+});
+const pages = document.querySelectorAll('.page');
+const overlayNavigation = document.querySelector('.overlay-navigation');
+const navLinks = overlayNavigation.querySelectorAll('a');
+
+// Function to update URL based on scroll position
+function updateURL() {
+    pages.forEach((page, index) => {
+        const rect = page.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+            const id = page.getAttribute('id');
+            history.replaceState({}, '', id);
+        }
+    });
+}
+
+// Event listener for scroll
+window.addEventListener('scroll', updateURL);
+
+// Attach event listeners to navigation links
+navLinks.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        const targetPage = pages[index];
+        targetPage.scrollIntoView();
+        history.replaceState({}, '', targetPage.getAttribute('id'));
+        overlayNavigation.classList.remove('active'); // Close overlay
+    });
+});
+
+function handleDirectURLAccess() {
+    const targetSectionId = window.location.hash.substring(1);
+    const targetSection = document.getElementById(targetSectionId);
+    if (targetSection) {
+        targetSection.scrollIntoView();
+    }
+}
+
+// Event listener for initial page load
+window.addEventListener('load', () => {
+    handleDirectURLAccess();
+    updateURL(); // Update URL on initial load
 });
